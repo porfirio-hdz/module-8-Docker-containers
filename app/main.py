@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+import uvicorn
 import joblib
 import pandas as pd
 from pydantic.typing import Literal
@@ -35,8 +36,11 @@ async def predict(features: Item):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 
 if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
