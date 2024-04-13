@@ -25,3 +25,7 @@ curl localhost:8000
 ```
 
 To try out the model for inferences, open your browser at [localhost:8000/docs](localhost:8000/docs). You should see the API documentation interface, provided by Fast API.
+
+Click on the **Try it out** button and enter the input parameters to get a model inference.
+
+![fast_api_demo](img/fast_api_example.png)
